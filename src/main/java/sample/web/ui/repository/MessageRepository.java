@@ -20,15 +20,4 @@ import sample.web.ui.domain.Message;
  * @author Rob Winch
  */
 public interface MessageRepository extends CrudRepository<Message, Long> {
-
-//	List<Message> findAll();
-//
-//	List<Message> findById(Message id);
-//
-//	//Message save(Message message);
-//
-//	Message findMessage(Long id);
-//
-//	void deleteMessage(Long id);
-
 }

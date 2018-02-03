@@ -77,12 +77,12 @@ public class MessageController {
 		throw new RuntimeException("Expected exception in controller");
 	}
 
-//	@GetMapping(value = "delete/{id}")
-//	public ModelAndView delete(@PathVariable("id") Long id) {
-//		this.messageRepository.deleteMessage(id);
-//		Iterable<Message> messages = this.messageRepository.findAll();
-//		return new ModelAndView("messages/list", "messages", messages);
-//	}
+	@GetMapping(value = "delete/{id}")
+	public ModelAndView delete(@PathVariable("id") Message message) {
+		this.messageRepository.delete(message);
+		Iterable<Message> messages = this.messageRepository.findAll();
+		return new ModelAndView("messages/list", "messages", messages);
+	}
 
 	@GetMapping(value = "modify/{id}")
 	public ModelAndView modifyForm(@PathVariable("id") Message message) {
