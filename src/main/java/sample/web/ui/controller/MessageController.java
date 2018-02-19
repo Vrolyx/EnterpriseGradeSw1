@@ -18,6 +18,7 @@ package sample.web.ui.controller;
 
 import javax.validation.Valid;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import sample.web.ui.domain.Message;
 import sample.web.ui.repository.MessageRepository;
 
@@ -39,11 +40,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 @RequestMapping("/")
 public class MessageController {
 
-	private final MessageRepository messageRepository;
-
-	public MessageController(MessageRepository messageRepository) {
-		this.messageRepository = messageRepository;
-	}
+	@Autowired
+	private MessageRepository messageRepository;
 
 	@GetMapping
 	public ModelAndView list() {
